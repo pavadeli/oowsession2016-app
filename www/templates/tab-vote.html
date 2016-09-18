@@ -1,0 +1,11 @@
+<ion-view view-title="Vote">
+  <ion-content>
+    <div class="card">
+      <div class="item item-divider">Tap to vote</div>
+      <a class="item item-icon-left" href ng-repeat="employee in employees | orderBy:'name' track by employee.id" ng-click="vote(employee.id)">
+        <i class="icon ion-ios-person"></i> {{employee.name}}
+        <span class="badge badge-assertive">{{employee.votes || 0}}</span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

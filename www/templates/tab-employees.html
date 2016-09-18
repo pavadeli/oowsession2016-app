@@ -1,0 +1,12 @@
+<ion-view view-title="Employees">
+  <ion-content>
+    <div class="card">
+      <a class="item item-icon-left item-icon-right" ng-repeat="employee in employees | orderBy:'name' track by employee.id" type="item-text-wrap" href="#/tab/employees/{{employee.id}}">
+        <i class="icon ion-ios-person"></i>
+        <h2>{{employee.name}}</h2>
+        <p>{{employee.job}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>

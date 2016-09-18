@@ -1,0 +1,64 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view>
+  <ion-nav-title>{{employee.name}}</ion-nav-title>
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-body">
+        <i class="icon ion-ios-person" style="font-size: 500%; float: left; padding-right: 25px; margin-top: -5px; vertical-align: middle;"></i>
+        <h1>{{employee.name}}</h1>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider">General information</div>
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col col-33">Job:</div>
+          <div class="col">{{employee.job}}</div>
+        </div>
+        <div class="row">
+          <div class="col col-33">Department:</div>
+          <div class="col">{{employee.department.name}} ({{employee.department.location}})</div>
+        </div>
+        <div class="row">
+          <div class="col col-33">Hiredate:</div>
+          <div class="col">{{employee.hiredate | date}}</div>
+        </div>
+        <div class="row">
+          <div class="col col-33">Salary:</div>
+          <div class="col">{{employee.salary | currency}}</div>
+        </div>
+        <div class="row">
+          <div class="col col-33">Commission:</div>
+          <div class="col">{{employee.commission | currency}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" ng-if="employee.manager">
+      <div class="item item-divider">Manager</div>
+      <a href="#/tab/employees/{{employee.manager.id}}" class="item item-icon-left item-icon-right">
+        <i class="icon  ion-ios-person-outline"></i>
+        <h3>{{employee.manager.name}}</h3>
+        <p>{{employee.manager.job}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+    </div>
+
+    <div class="card" ng-if="employee.subordinates.length">
+      <div class="item item-divider">Subordinates</div>
+      <a ng-repeat="subord in employee.subordinates track by subord.id" href="#/tab/employees/{{subord.id}}" class="item item-icon-left item-icon-right">
+        <i class="icon  ion-ios-person-outline"></i>
+        <h3>{{subord.name}}</h3>
+        <p>{{subord.job}}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

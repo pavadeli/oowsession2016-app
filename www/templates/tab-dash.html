@@ -1,0 +1,23 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <div class="card">
+      <div class="item item-body">
+        <h1>Welcome to this demo</h1>
+        <p>
+          This is a simple demo application that consumes the Employee API as presented in our session at Oracle Open World 2016.
+        </p>
+        <p class="subdued">
+          Created by <a href="https://twitter.com/lucasjellema">Lucas Jellema</a> and
+          <a href="https://twitter.com/pavadeli">Paco van der Linden</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="item item-divider"><a href="#/tab/dash/votes">Current votes</a></div>
+      <div class="item item-body">
+        <nvd3 options="options" data="data" on-ready="onready"></nvd3>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
