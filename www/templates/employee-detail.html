@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card" ng-if="employee.id">
       <div class="item item-divider">General information</div>
       <div class="item item-text-wrap">
         <div class="row">
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="card" ng-if="employee.manager">
+    <div class="card" ng-if="employee.manager.id">
       <div class="item item-divider">Manager</div>
       <a href="#/tab/employees/{{employee.manager.id}}" class="item item-icon-left item-icon-right">
         <i class="icon  ion-ios-person-outline"></i>

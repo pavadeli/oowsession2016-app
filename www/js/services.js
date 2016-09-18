@@ -7,11 +7,13 @@ angular.module('starter.services', [])
     return $resource(baseUrl + '/employees/:id');
   })
 
-  .factory('vote', function (baseUrl, $http, $ionicLoading) {
+  .factory('vote', function (baseUrl, $http, $ionicLoading, $ionicPopup) {
     return function vote(id) {
       $ionicLoading.show();
       return $http.post(baseUrl + '/employees/' + id + '/vote')
-        .then(function () { $ionicLoading.hide(); });
+        .then(function () { $ionicPopup.alert({ title: 'Success', template: 'Vote received, please wait a few seconds for the vote to be processed.', }); })
+        .catch(function () { $ionicPopup.alert({ title: 'Error', template: 'Could not process the vote, please try again' }) })
+        .finally(function () { $ionicLoading.hide(); });
     };
   })
 
