@@ -7,7 +7,38 @@
 <ion-view>
   <ion-nav-title>{{employee.name}}</ion-nav-title>
   <ion-content class="padding">
-    <div class="card">
+    <div class="loading" ng-show="!employee.id">
+      <div class="card">
+        <div class="item item-body">
+          <i class="icon ion-ios-person" style="font-size: 500%; float: left; padding-right: 25px; margin-top: -5px; vertical-align: middle;"></i>
+          <h1>&#9607;&#9607;&#9607;&#9607;&#9607;</h1>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</div>
+        <div class="item item-text-wrap">
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="item item-divider">&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</div>
+        <div class="item item-text-wrap">
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;</p>
+          <p>&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;&#9607;</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" ng-if="employee.id">
       <div class="item item-body">
         <i class="icon ion-ios-person" style="font-size: 500%; float: left; padding-right: 25px; margin-top: -5px; vertical-align: middle;"></i>
         <h1>{{employee.name}}</h1>

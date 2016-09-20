@@ -1,1 +1,19 @@
 /* Empty. Add your own CSS if you like */
+@keyframes shimmer {
+    to {
+        opacity: 0.8;
+    }
+}
+
+.loading .card,
+.loading .item,
+.loading .item p,
+.loading .item h1 {
+    opacity: .3;
+    color: gray;
+    animation: shimmer 1s ease 0s infinite alternate;
+ }
+
+ .loading .card {
+    animation-delay: 0.5s;
+ }

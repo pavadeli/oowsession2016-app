@@ -54,12 +54,10 @@ angular.module('starter.controllers', [])
     $scope.employees = employeeVotes;
   })
 
-  .controller('EmployeeDetailCtrl', function ($scope, $stateParams, Employee, $ionicLoading, $ionicPopup) {
+  .controller('EmployeeDetailCtrl', function ($scope, $stateParams, Employee, $ionicPopup) {
     $scope.employee = Employee.get({ id: $stateParams.employeeId });
-    $ionicLoading.show();
     $scope.employee.$promise
-      .catch(function () { $ionicPopup.alert({ title: 'Error', template: 'Could not load employee information, please try again' }); })
-      .finally(function () { $ionicLoading.hide(); });
+      .catch(function () { $ionicPopup.alert({ title: 'Error', template: 'Could not load employee information, please try again' }); });
   })
 
   .controller('VoteCtrl', function ($scope, employeeVotes, vote) {
